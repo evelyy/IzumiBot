@@ -13,10 +13,14 @@ class DiceRollCommand extends commando.Command {
   async run(message, sides) {
     if (sides) {
         var roll = Math.floor((Math.random() * sides) + 1);
+        message.reply("You rolled a " + roll + '!');
+    } else if (typeof sides !== !NaN) {
+        message.reply("```");
+    }
     } else {
         var roll = Math.floor((Math.random() * 6) + 1);
+        message.reply("You rolled a " + roll + '!');
     }
-    message.reply("You rolled a " + roll + '!');
   }
 }
 
