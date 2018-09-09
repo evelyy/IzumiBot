@@ -13,3 +13,5 @@ discord.js-commando
 ytdl-core
 
 `npm install ytdl-core`
+
+# javascript is more homosexual than your mum 
