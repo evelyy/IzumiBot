@@ -1,5 +1,5 @@
 # IzumiBot
-## Probably the most homosexual discord bot around
+## Probably the most homosexual discord bot around.
 
 ## Requirements
 discord.js
