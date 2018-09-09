@@ -1,6 +1,6 @@
 # IzumiBot
 ## Probably the most homosexual discord bot around
 
-## Requiremetns
-Discord.js-commando
+## Requirements
+Discord.js-commando \n
 `npm install discord.js-commando`
