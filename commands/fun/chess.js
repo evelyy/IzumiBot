@@ -18,25 +18,39 @@
 
 const commando = require('discord.js-commando');
 
-class DiceRollCommand extends commando.Command {
+function chessBoard() {
+    return `\`\`\`+ - + - + - + - + - + - + - + - +\n
+    | r | n | b | q | k | b | n | r |\n
+    + - + - + - + - + - + - + - + - +\n
+    | p | p | p | p | p | p | p | p |\n
+    + - + - + - + - + - + - + - + - +\n
+    |   |   |   |   |   |   |   |   |\n
+    + - + - + - + - + - + - + - + - +\n
+    |   |   |   |   |   |   |   |   |\n
+    + - + - + - + - + - + - + - + - +\n
+    |   |   |   |   |   |   |   |   |\n
+    + - + - + - + - + - + - + - + - +\n
+    |   |   |   |   |   |   |   |   |\n
+    + - + - + - + - + - + - + - + - +\n
+    | P | P | P | P | P | P | P | P |\n
+    + - + - + - + - + - + - + - + - +\n
+    | R | N | B | Q | K | B | N | R |\n
+    + - + - + - + - + - + - + - + - +\`\`\``;
+}
+
+class ChessCommand extends commando.Command {
   constructor(client) {
     super(client, {
       name: 'chess',
       group: 'fun',
       memberName: 'chess',
-      description: 'rolls a die'
+      description: 'starts a game of chess'
     });
   }
 
-  async run(message, sides) {
-    if (sides) {
-        var roll = Math.floor((Math.random() * sides) + 1);
-        message.reply("You rolled a " + roll + '!');
-    } else {
-        var roll = Math.floor((Math.random() * 6) + 1);
-        message.reply("You rolled a " + roll + '!');
-    }
+  async run(message) {
+      message.channel.send(chessBoard());
   }
 }
 
-module.exports = Chess;
+module.exports = ChessCommand;
