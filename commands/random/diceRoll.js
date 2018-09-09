@@ -16,7 +16,6 @@ class DiceRollCommand extends commando.Command {
         message.reply("You rolled a " + roll + '!');
     } else if (typeof sides !== !NaN) {
         message.reply("```");
-    }
     } else {
         var roll = Math.floor((Math.random() * 6) + 1);
         message.reply("You rolled a " + roll + '!');
