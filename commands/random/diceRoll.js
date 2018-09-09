@@ -11,12 +11,10 @@ class DiceRollCommand extends commando.Command {
   }
 
   async run(message, sides) {
-    if (sides == "null") {
-        // var roll = Math.floor((Math.random() * 6) + 1);
-        var roll = 1
+    if (sides) {
+        var roll = Math.floor((Math.random() * sides) + 1);
     } else {
-        // var roll = Math.floor((Math.random() * sides) + 1);
-        var roll = 2
+        var roll = Math.floor((Math.random() * 6) + 1);
     }
     message.reply("You rolled a " + roll + '!');
   }
