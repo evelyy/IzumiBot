@@ -15,7 +15,7 @@ client.on('message', function(message) {
     var messageParts = message.content.split(' ');
     var command = messageParts[0].toLowerCase();
     var parameters = messageParts.splice(1, messageParts.length);
-    console.log(`logged in as ${client.user.tag}!`)
+    console.log(`message was: ${message}`)
 });
 
 client.login(tkn.d_token)
