@@ -18,24 +18,31 @@
 
 const commando = require('discord.js-commando');
 
-function chessBoard() {
-    return `\`\`\`+ - + - + - + - + - + - + - + - +\n
-    | r | n | b | q | k | b | n | r |\n
-    + - + - + - + - + - + - + - + - +\n
-    | p | p | p | p | p | p | p | p |\n
-    + - + - + - + - + - + - + - + - +\n
-    |   |   |   |   |   |   |   |   |\n
-    + - + - + - + - + - + - + - + - +\n
-    |   |   |   |   |   |   |   |   |\n
-    + - + - + - + - + - + - + - + - +\n
-    |   |   |   |   |   |   |   |   |\n
-    + - + - + - + - + - + - + - + - +\n
-    |   |   |   |   |   |   |   |   |\n
-    + - + - + - + - + - + - + - + - +\n
-    | P | P | P | P | P | P | P | P |\n
-    + - + - + - + - + - + - + - + - +\n
-    | R | N | B | Q | K | B | N | R |\n
-    + - + - + - + - + - + - + - + - +\`\`\``;
+class ChessGame {
+    constructor(players) {
+        this.player1 = players[0];
+        this.player2 = players[1];
+    }
+
+    chessBoard() {
+        return `\`\`\`+ - + - + - + - + - + - + - + - +\n
+        | r | n | b | q | k | b | n | r |\n
+        + - + - + - + - + - + - + - + - +\n
+        | p | p | p | p | p | p | p | p |\n
+        + - + - + - + - + - + - + - + - +\n
+        |   |   |   |   |   |   |   |   |\n
+        + - + - + - + - + - + - + - + - +\n
+        |   |   |   |   |   |   |   |   |\n
+        + - + - + - + - + - + - + - + - +\n
+        |   |   |   |   |   |   |   |   |\n
+        + - + - + - + - + - + - + - + - +\n
+        |   |   |   |   |   |   |   |   |\n
+        + - + - + - + - + - + - + - + - +\n
+        | P | P | P | P | P | P | P | P |\n
+        + - + - + - + - + - + - + - + - +\n
+        | R | N | B | Q | K | B | N | R |\n
+        + - + - + - + - + - + - + - + - +\`\`\``;
+    }
 }
 
 class ChessCommand extends commando.Command {
@@ -48,8 +55,11 @@ class ChessCommand extends commando.Command {
     });
   }
 
-  async run(message) {
-      message.channel.send(chessBoard());
+  async run(message, ...args) {
+      if (args[0] instanceof User) { //User not defined
+          game = new ChessGame(args[0]);
+          message.channel.send(game.chessBoard());
+      }
   }
 }
 
