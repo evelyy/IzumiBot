@@ -10,8 +10,12 @@ class DiceRollCommand extends commando.Command {
     });
   }
 
-  async run(message, args) {
-    var roll = Math.floor(Math.random() * 6) + 1; // basically rolls a six sided die
+  async run(message, sides) {
+    if (sides === null) {
+        var roll = Math.floor(Math.random() * 6) + 1; // basically rolls a six sided die
+    } else {
+        var roll = Math.floor(Math.random() * sides) + 1;
+    }
     message.reply("You rolled a " + roll + '!');
   }
 }
