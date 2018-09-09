@@ -11,7 +11,7 @@ class DiceRollCommand extends commando.Command {
   }
 
   async run(message, sides) {
-    if (sides == null) {
+    if (sides == "null") {
         // var roll = Math.floor((Math.random() * 6) + 1);
         var roll = 1
     } else {
