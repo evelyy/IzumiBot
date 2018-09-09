@@ -2,7 +2,11 @@
 ## Probably the most homosexual discord bot around
 
 ## Requirements
-Discord.js-commando
+discord.js
+
+`npm install discord.js`
+
+discord.js-commando
 
 `npm install discord.js-commando`
 
