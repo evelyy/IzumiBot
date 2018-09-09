@@ -8,6 +8,7 @@ var ytAudioQueue = [];
 var dispatcher = null;
 
 client.registry.registerGroup('random', 'Random');
+client.registry.registerGroup('fanfiction', 'Fanfiction');
 client.registry.registerDefaults();
 client.registry.registerCommandsIn(__dirname + '/commands/')
 
