@@ -7,13 +7,18 @@ const ytdl = require('ytdl-core');
 var ytAudioQueue = [];
 var dispatcher = null;
 
-client.registry.registerGroup('random', 'Random');
+client.registry.registerGroups([
+    ['random', 'Random'],
+    ['fanfiction', 'Fanfiction'],
+    ['fun', 'Fun']
+]);
 client.registry.registerGroup('fanfiction', 'Fanfiction');
 client.registry.registerDefaults();
 client.registry.registerCommandsIn(__dirname + '/commands/')
 
 client.on('ready', () => {
     console.log(`logged in as ${client.user.tag}`)
+
 })
 client.on('message', function(message) {
     var messageParts = message.content.split(' ');
