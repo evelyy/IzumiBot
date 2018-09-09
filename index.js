@@ -12,6 +12,9 @@ client.registry.registerGroup('fanfiction', 'Fanfiction');
 client.registry.registerDefaults();
 client.registry.registerCommandsIn(__dirname + '/commands/')
 
+client.on('ready', () => {
+    console.log(`logged in as ${client.user.tag}`)
+})
 client.on('message', function(message) {
     var messageParts = message.content.split(' ');
     var command = messageParts[0].toLowerCase();
