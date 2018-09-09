@@ -7,7 +7,11 @@ const ytdl = require('ytdl-core');
 var ytAudioQueue = [];
 var dispatcher = null;
 
-client.registry.registerGroup('random', 'Random');
+client.registry.registerGroups([
+    ['random', 'Random'],
+    ['fanfiction', 'Fanfiction'],
+    ['fun', 'Fun']
+]);
 client.registry.registerGroup('fanfiction', 'Fanfiction');
 client.registry.registerDefaults();
 client.registry.registerCommandsIn(__dirname + '/commands/')
@@ -20,6 +24,7 @@ client.on('message', function(message) {
     var messageParts = message.content.split(' ');
     var command = messageParts[0].toLowerCase();
     var parameters = messageParts.splice(1, messageParts.length);
+    console.log(`message was: ${message}`)
 });
 
 client.login(tkn.d_token)
