@@ -14,4 +14,4 @@ ytdl-core
 
 `npm install ytdl-core`
 
-# javascript is more homosexual than your mum
+# javascript is more homosexual than your mum 
